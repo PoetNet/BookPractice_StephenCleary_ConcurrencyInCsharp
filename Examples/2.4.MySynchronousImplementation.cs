@@ -15,7 +15,7 @@ interface IMyUnSuccessAsyncInterface
 
 public class MySynchronousImplementation : IMySuccessAsyncInterface, IMyUnSuccessAsyncInterface
 {
-    private static readonly Task<int> zeroTask = Task.FromResult(0);
+    private readonly Task<int> zeroTask = Task.FromResult(0);
 
     // Задача, завершенная с NotImplementedException
     public Task<int> GetValueAsync()
